@@ -1,5 +1,5 @@
 // increment
-export const increment = (index) => {
+export function increment(index) {
   return {
     type: 'INCREMENT_LIKES',
     index: index
@@ -7,7 +7,7 @@ export const increment = (index) => {
 }
 
 // add comment
-export const addComment = (postId, author, comment) => {
+export function addComment(postId, author, comment) {
   return {
     type: 'ADD_COMMENT',
     postId: postId,
@@ -17,10 +17,11 @@ export const addComment = (postId, author, comment) => {
 }
 
 // remove comment
-export const removeComment = (postId, index) => {
+
+export function removeComment(postId, index) {
   return {
     type: 'REMOVE_COMMENT',
-    postId: postId,
     index: index,
+    postId: postId,
   }
 }
