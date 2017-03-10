@@ -14,10 +14,14 @@ const defaultState = {
   comments: comments,
 }
 
+const enhancers = compose(
+  window.devToolsExtension ? window.devToolsExtension() : f => f
+)
+
 const store = createStore(
   rootReducer,
   defaultState,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  enhancers
 )
 
 export const history = syncHistoryWithStore(browserHistory, store)
